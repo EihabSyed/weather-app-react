@@ -1,9 +1,13 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import logo from './images/logo.svg';
 import './App.css';
+import WeatherPage from './components/weather-data.js';
+import ToolBar from './components/toolbar.js';
 
 function App() {
   return (
     <div className="App">
+      <ToolBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <WeatherPage />
       </header>
     </div>
   );
