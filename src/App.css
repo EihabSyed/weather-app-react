@@ -61,7 +61,7 @@
 
 #ToolBarDay.OpenToolBarDay {
   max-width: 20vw;
-  transition: all 1s ease;
+  filter: opacity(0.7);
 }
 
 .Icon {
@@ -69,6 +69,7 @@
   height: 3em;
   width: 3em;
   cursor: pointer;
+  float: right;
 }
 
 .Icon:hover {
@@ -78,4 +79,79 @@
 
 .Menu-Button {
   float: right;
+}
+
+.brand-name {
+  float: right;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.button {
+  /*margin: 0px 5vw 2.5vh;*/
+  background-color: black;
+  width: 10vw;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: black;
+  filter: invert(1);
+}
+
+.Content {
+  justify-content: center;
+  flex: content;
+}
+
+.brand {
+  height: 2em;
+  max-width: 9vw;
+  margin-top: 8px;
+}
+
+.sun {
+  height: 3em;
+  width: 3em;
+  padding: 10px 15px 10px 15px;
+}
+
+.moon {
+  height: 3em;
+  width: 3em;
+  padding: 10px 15px 10px 15px;
+}
+
+.buttons {
+  flex: content;
+  height: 10vh;
+  width: 7.5vw;
+  justify-items: center;
+}
+
+.popup-box {
+  position: fixed;
+  background: #0000009d;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 50%;
+  margin: 0 auto;
+  height: 50%;
+  max-height: 70vh;
+  min-height: 10vh;
+  min-width: 10vh;
+  margin-top: calc(100vh - 80vh - 20px);
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+ 
+.popup-content {
+  align-items: center;
+  color: black;
 }
