@@ -8,14 +8,25 @@ import About from './components/about.js';
 function App() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [mode, setMode] = useState(false);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   }
 
+  const changeMode = () => {
+    setMode(!mode);
+  }
+
+  const props = {
+    handleClose: togglePopup,
+    handleMode: changeMode,
+    modeType: mode
+    }
+
   return (
     <div className="App">
-      <ToolBar handleClose={togglePopup} />
+      <ToolBar {...props}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -30,7 +41,7 @@ function App() {
           Learn React
         </a>
         <WeatherPage />
-        {isOpen && <About handleClose={togglePopup}/>}
+        {isOpen && <About handleClose={togglePopup} modeSet={mode ? "ToolBarNight" : null }/>}
       </header>
     </div>
   );

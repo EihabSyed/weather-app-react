@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  filter: invert(0.5);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -47,11 +48,12 @@
   height: 20vh;
   width: 20vw;
   pointer-events: none;
+  filter: invert(0.5);
 }
 
 #ToolBarDay {
   max-width: 3em;
-  transition: all 1s ease;
+  transition: all 1.5s ease;
   overflow: hidden;
   position: absolute;
   background-color: #fff;
@@ -61,7 +63,10 @@
 
 #ToolBarDay.OpenToolBarDay {
   max-width: 20vw;
-  filter: opacity(0.7);
+}
+
+#ToolBarDay.OpenToolBarDay.darkTheme {
+  filter: invert(1);
 }
 
 .Icon {
@@ -81,22 +86,14 @@
   float: right;
 }
 
-.brand-name {
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
-}
-
 .button {
   /*margin: 0px 5vw 2.5vh;*/
-  background-color: black;
   width: 10vw;
+  filter: invert(1);
 }
 
 .button:hover {
-  cursor: pointer;
-  background-color: black;
-  filter: invert(1);
+  background-color: green;
 }
 
 .Content {
@@ -107,13 +104,25 @@
 .brand {
   height: 2em;
   max-width: 9vw;
-  margin-top: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .sun {
   height: 3em;
   width: 3em;
   padding: 10px 15px 10px 15px;
+  filter: invert(1);
+}
+
+.light {
+  background-color: black;
+  pointer-events: none;
+}
+
+.dark {
+  background-color: white;
+  pointer-events: none;
 }
 
 .moon {
@@ -154,4 +163,12 @@
 .popup-content {
   align-items: center;
   color: black;
+}
+
+.darkTheme {
+  background-color: black;
+}
+
+.ToolBarNight {
+  filter: invert(1);
 }
