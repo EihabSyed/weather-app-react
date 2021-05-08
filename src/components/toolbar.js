@@ -33,7 +33,7 @@ const ToolBar = (props) => {
 
     if (!state.showResults) {
         return (
-            <div id='ToolBarDay' className={props.modeType ? "ToolBarNight" : null}>
+            <div id='ToolBarDay' className={/*props.storageMode*/ props.cookieMode ? "ToolBarNight" : null}>
                 <div className="Menu-Button">
                     <img src={hamburgericon} className="Icon" alt="hamburgericon" onClick={() => dispatch({type: 'showOptions'})} />
                 </div>
@@ -44,7 +44,7 @@ const ToolBar = (props) => {
             'OpenToolBarDay': true,
             'darkTheme': false
           });
-        if (props.modeType) {
+        if (/*props.storageMode*/ props.cookieMode) {
             themeClass = classNames({
                 'OpenToolBarDay': true,
                 'darkTheme': true
