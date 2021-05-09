@@ -8,16 +8,26 @@ import { useCookies } from 'react-cookie';
 
 function App() {
 
-  const showPosition = () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log(position);
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
+  var userLongitude;
+  var userLatitude;
+  const showPosition = async () => {
+    navigator.geolocation.getCurrentPosition(await function (position) {
+      //console.log(position.coords.latitude);
+      //console.log(position.coords.longitude);
+      userLongitude = position.coords.longitude;
+      userLatitude = position.coords.latitude;
+      console.log(userLongitude);
+      console.log(userLatitude);
     })
   }
-  React.useEffect(showPosition, []);
+
+
+
+
+  React.useEffect(showPosition);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [opacAll, setOpacAll] = useState(false);
   //const [mode, setMode] = useState(false);
   //var localIsTrueSet = (localStorage.getItem("Mode") === 'true');
   const [cookies, setCookie] = useCookies(['Mode']);
@@ -29,6 +39,10 @@ function App() {
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
+  }
+
+  const toggleOpac = () => {
+    setOpacAll(!opacAll);
   }
 
   const changeMode = () => {
@@ -43,27 +57,32 @@ function App() {
     handleClose: togglePopup,
     handleMode: changeMode,
     //modeType: mode,
-    cookieMode: cookiesIsTrueSet
+    cookieMode: cookiesIsTrueSet,
     //storageMode: localIsTrueSet
+    allOpac: toggleOpac
   }
 
   return (
     <div className="App">
       <ToolBar {...props} />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <div className={opacAll ? "Weather-page-open" : "Weather-page-close"}>
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+          <p>{userLongitude}</p>
+          <p>{userLatitude}</p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
         </a>
-        <WeatherPage />
+          <WeatherPage />
+        </div>
         {isOpen && <About {...props} />}
       </header>
     </div>

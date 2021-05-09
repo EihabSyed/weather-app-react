@@ -35,7 +35,7 @@ const ToolBar = (props) => {
         return (
             <div id='ToolBarDay' className={/*props.storageMode*/ props.cookieMode ? "ToolBarNight" : null}>
                 <div className="Menu-Button">
-                    <img src={hamburgericon} className="Icon" alt="hamburgericon" onClick={() => dispatch({type: 'showOptions'})} />
+                    <img src={hamburgericon} className="Icon" alt="hamburgericon" onClick={() => { dispatch({type: 'showOptions'}); props.allOpac() }} />
                 </div>
             </div>
         );
@@ -53,7 +53,7 @@ const ToolBar = (props) => {
         return (
             <div id='ToolBarDay' className={themeClass} >
                 <div className="Menu-Button">
-                    <img src={closeicon} className="Icon" alt="closeicon" onClick={() => dispatch({type: 'hideOptions'})} />
+                    <img src={closeicon} className="Icon" alt="closeicon" onClick={() => { dispatch({type: 'hideOptions'}); props.allOpac() }} />
                 </div>
                 <br />
                 <div>

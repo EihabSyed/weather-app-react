@@ -14,8 +14,32 @@
   }
 }
 
+.Weather-page-close {
+  background-color: black;
+  filter: opacity(62.5%);
+  height: 100vh;
+  width: calc(100vw - 1.5em);
+  position: absolute;
+  left: 1.5em;
+  transition: all 1.5s ease;
+}
+
+.Weather-page-open {
+  background-color: black;
+  filter: opacity(62.5%);
+  height: 100vh;
+  width: calc(100vw - 20vw);
+  position: absolute;
+  left: 20vw;
+  transition: all 1.5s ease;
+  overflow: hidden;
+}
+
 .App-header {
-  background-color: pink;
+  background-image: url(./images/cloudy-day.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -90,10 +114,6 @@
   /*margin: 0px 5vw 2.5vh;*/
   width: 10vw;
   filter: invert(1);
-}
-
-.button:hover {
-  background-color: green;
 }
 
 .Content {

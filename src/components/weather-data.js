@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Testing Environment °
-const json = require('../response.json'); 
+const json = require('../response.json');
 const lat = 43.961775;
 const lng = -78.894863;
 const params = 'airTemperature';
@@ -21,7 +21,13 @@ const WeatherPage = () => {
         // Do something with response data.
         return (<p>{Math.ceil(jsonData.hours.find(tempFinder).airTemperature.sg)}</p>);
     });*/
-    return (<p>{Math.round(json.hours.find(tempFinder).airTemperature.sg)}&#176;C</p>);
+    return (
+        <div>
+            <p>{Math.round(json.hours.find(tempFinder).airTemperature.sg)}&#176;C</p>
+            <p>{lat}</p>
+            <p>{lng}</p>
+        </div>
+    );
 }
 
 export default WeatherPage;
