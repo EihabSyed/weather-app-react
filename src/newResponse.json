@@ -1,0 +1,274 @@
+{
+    "type": "FeatureCollection",
+    "query": [
+        -78.894863,
+        43.961775
+    ],
+    "features": [
+        {
+            "id": "address.4067997483587600",
+            "type": "Feature",
+            "place_type": [
+                "address"
+            ],
+            "relevance": 1,
+            "properties": {
+                "accuracy": "rooftop"
+            },
+            "text": "New Providence Street",
+            "place_name": "2453 New Providence Street, Oshawa, Ontario L1L 0G2, Canada",
+            "center": [
+                -78.8953204,
+                43.9615133
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.8953204,
+                    43.9615133
+                ]
+            },
+            "address": "2453",
+            "context": [
+                {
+                    "id": "neighborhood.15670637238408220",
+                    "text": "Windfields"
+                },
+                {
+                    "id": "postcode.7689750413111560",
+                    "text": "L1L 0G2"
+                },
+                {
+                    "id": "place.14879036429840350",
+                    "wikidata": "Q211867",
+                    "text": "Oshawa"
+                },
+                {
+                    "id": "region.10598799396263190",
+                    "wikidata": "Q1904",
+                    "short_code": "CA-ON",
+                    "text": "Ontario"
+                },
+                {
+                    "id": "country.10278600750587150",
+                    "wikidata": "Q16",
+                    "short_code": "ca",
+                    "text": "Canada"
+                }
+            ]
+        },
+        {
+            "id": "neighborhood.15670637238408220",
+            "type": "Feature",
+            "place_type": [
+                "neighborhood"
+            ],
+            "relevance": 1,
+            "properties": {},
+            "text": "Windfields",
+            "place_name": "Windfields, L1L 0G2, Oshawa, Ontario, Canada",
+            "bbox": [
+                -78.9440209960999,
+                43.9412224517237,
+                -78.8818382695707,
+                43.9810748720001
+            ],
+            "center": [
+                -78.8993,
+                43.9537
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.8993,
+                    43.9537
+                ]
+            },
+            "context": [
+                {
+                    "id": "postcode.7689750413111560",
+                    "text": "L1L 0G2"
+                },
+                {
+                    "id": "place.14879036429840350",
+                    "wikidata": "Q211867",
+                    "text": "Oshawa"
+                },
+                {
+                    "id": "region.10598799396263190",
+                    "wikidata": "Q1904",
+                    "short_code": "CA-ON",
+                    "text": "Ontario"
+                },
+                {
+                    "id": "country.10278600750587150",
+                    "wikidata": "Q16",
+                    "short_code": "ca",
+                    "text": "Canada"
+                }
+            ]
+        },
+        {
+            "id": "postcode.7689750413111560",
+            "type": "Feature",
+            "place_type": [
+                "postcode"
+            ],
+            "relevance": 1,
+            "properties": {},
+            "text": "L1L 0G2",
+            "place_name": "L1L 0G2, Oshawa, Ontario, Canada",
+            "bbox": [
+                -78.8972052356682,
+                43.9600526613956,
+                -78.8933506820215,
+                43.9624326936458
+            ],
+            "center": [
+                -78.894847,
+                43.961207
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.894847,
+                    43.961207
+                ]
+            },
+            "context": [
+                {
+                    "id": "place.14879036429840350",
+                    "wikidata": "Q211867",
+                    "text": "Oshawa"
+                },
+                {
+                    "id": "region.10598799396263190",
+                    "wikidata": "Q1904",
+                    "short_code": "CA-ON",
+                    "text": "Ontario"
+                },
+                {
+                    "id": "country.10278600750587150",
+                    "wikidata": "Q16",
+                    "short_code": "ca",
+                    "text": "Canada"
+                }
+            ]
+        },
+        {
+            "id": "place.14879036429840350",
+            "type": "Feature",
+            "place_type": [
+                "place"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q211867"
+            },
+            "text": "Oshawa",
+            "place_name": "Oshawa, Ontario, Canada",
+            "bbox": [
+                -78.9593874187109,
+                43.8337235700748,
+                -78.7823202261681,
+                44.0473917135682
+            ],
+            "center": [
+                -78.8615,
+                43.9173
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.8615,
+                    43.9173
+                ]
+            },
+            "context": [
+                {
+                    "id": "region.10598799396263190",
+                    "wikidata": "Q1904",
+                    "short_code": "CA-ON",
+                    "text": "Ontario"
+                },
+                {
+                    "id": "country.10278600750587150",
+                    "wikidata": "Q16",
+                    "short_code": "ca",
+                    "text": "Canada"
+                }
+            ]
+        },
+        {
+            "id": "region.10598799396263190",
+            "type": "Feature",
+            "place_type": [
+                "region"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q1904",
+                "short_code": "CA-ON"
+            },
+            "text": "Ontario",
+            "place_name": "Ontario, Canada",
+            "bbox": [
+                -95.1587110998354,
+                41.6400774192147,
+                -74.3381040256039,
+                56.9135440989474
+            ],
+            "center": [
+                -84.2539813003493,
+                49.4515636581
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.2539813003493,
+                    49.4515636581
+                ]
+            },
+            "context": [
+                {
+                    "id": "country.10278600750587150",
+                    "wikidata": "Q16",
+                    "short_code": "ca",
+                    "text": "Canada"
+                }
+            ]
+        },
+        {
+            "id": "country.10278600750587150",
+            "type": "Feature",
+            "place_type": [
+                "country"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q16",
+                "short_code": "ca"
+            },
+            "text": "Canada",
+            "place_name": "Canada",
+            "bbox": [
+                -141.001980827511,
+                41.6400774,
+                -52.5198306260026,
+                83.1473634999412
+            ],
+            "center": [
+                -105.750595856519,
+                55.5859012851966
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.750595856519,
+                    55.5859012851966
+                ]
+            }
+        }
+    ],
+    "attribution": "NOTICE: © 2021 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."
+}

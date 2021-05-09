@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './images/logo.svg';
 import './App.css';
 import WeatherPage from './components/weather-data.js';
 import ToolBar from './components/toolbar.js';
@@ -8,26 +7,26 @@ import { useCookies } from 'react-cookie';
 
 function App() {
 
-  var userLongitude;
-  var userLatitude;
   const showPosition = async () => {
-    navigator.geolocation.getCurrentPosition(await function (position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
       //console.log(position.coords.latitude);
       //console.log(position.coords.longitude);
-      userLongitude = position.coords.longitude;
-      userLatitude = position.coords.latitude;
-      console.log(userLongitude);
-      console.log(userLatitude);
+      const userLongitude = position.coords.longitude;
+      const userLatitude = position.coords.latitude;
+      getLocation(userLatitude, userLongitude);
     })
   }
 
+  React.useEffect(showPosition, []);
 
 
+  const getLocation = (lat, long) => {
+    console.log(lat);
+    console.log(long);
+  }
 
-  React.useEffect(showPosition);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [opacAll, setOpacAll] = useState(false);
   //const [mode, setMode] = useState(false);
   //var localIsTrueSet = (localStorage.getItem("Mode") === 'true');
   const [cookies, setCookie] = useCookies(['Mode']);
@@ -39,10 +38,6 @@ function App() {
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
-  }
-
-  const toggleOpac = () => {
-    setOpacAll(!opacAll);
   }
 
   const changeMode = () => {
@@ -59,32 +54,20 @@ function App() {
     //modeType: mode,
     cookieMode: cookiesIsTrueSet,
     //storageMode: localIsTrueSet
-    allOpac: toggleOpac
+    //allOpac: toggleOpac
   }
 
   return (
     <div className="App">
       <ToolBar {...props} />
       <header className="App-header">
-        <div className={opacAll ? "Weather-page-open" : "Weather-page-close"}>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+        {/*<div className={opacAll ? "Weather-page-open" : "Weather-page-close"}></div>*/}
+        <WeatherPage />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
         </p>
-          <p>{userLongitude}</p>
-          <p>{userLatitude}</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-        </a>
-          <WeatherPage />
-        </div>
-        {isOpen && <About {...props} />}
       </header>
+      {isOpen && <About {...props} />}
     </div>
   );
 }
