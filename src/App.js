@@ -7,8 +7,8 @@ import { useCookies } from 'react-cookie';
 
 function App() {
 
-  const showPosition = async () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
+  const showPosition = () => {
+    navigator.geolocation.getCurrentPosition(async function (position) {
       //console.log(position.coords.latitude);
       //console.log(position.coords.longitude);
       const userLongitude = position.coords.longitude;
@@ -63,9 +63,6 @@ function App() {
       <header className="App-header">
         {/*<div className={opacAll ? "Weather-page-open" : "Weather-page-close"}></div>*/}
         <WeatherPage />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
       </header>
       {isOpen && <About {...props} />}
     </div>

@@ -35,7 +35,7 @@ const Content = (props) => {
         <div className="Content">
             <div className="Mode">
                 <h2>Day/Night Mode</h2>
-                <Grid container justify="center">
+                <Grid container justify="center" className="Mode-change">
                     <Grid item size="large" className={/*!props.storageMode*/ !props.cookieMode ? "light" : "darkTheme"}>
                         <Button variant="outlined" className="sun-button" onClick={/*!props.storageMode*/ !props.cookieMode ? null : props.handleMode}><img src={Day} className="sun" alt="sun" /></Button>
                     </Grid>

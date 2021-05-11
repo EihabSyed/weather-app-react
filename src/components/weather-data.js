@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
+import WeatherHead from '../api-calls/weatherAPI.js';
 import cloudyImage from '../images/background-images/Cloudy.png';
 import raingingImage from '../images/background-images/Raining.png';
 import snowingImage from '../images/background-images/Snowing.png';
 
-// Testing Environment °
-const json = require('../response1.json');
 var place = require('../newResponse.json');
 //var request = require('request');
 //const lat = 43.961775;
@@ -13,7 +12,6 @@ const lat = 49.611622;
 const lng = 6.131935;
 const params = 'airTemperature';
 const source = 'sg';
-var current = new Date().toISOString().substring(0, 13);
 /*var urlPlace = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=pk.eyJ1IjoiZWloYWJzeWVkIiwiYSI6ImNrb2htdjZyMjB5MGwydW9kcGhrdng3cmYifQ.mbYuzglXqH7jgVN54UpVOg`;
 
 var options = {
@@ -36,12 +34,6 @@ const pictures = [{ name: "Cloudy", image: cloudyImage, id: 1 },
 { name: "Snowing", image: snowingImage, id: 3 }];
 
 
-
-const tempFinder = (value, index, array) => {
-    return !(value.time.substring(0, 13).localeCompare(current));
-}
-
-
 const WeatherPage = () => {
     /*fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`, {
         headers: {
@@ -56,8 +48,7 @@ const WeatherPage = () => {
             <div className="Location">
                 {placeFinder()}
             </div>
-            <img src={raingingImage} className="WeatherApp-icon" alt="WeatherApp-icon" />
-            <h1 className="Temperature">{Math.round(json.hours.find(tempFinder).airTemperature.sg)}&#176;C</h1>
+            <WeatherHead pic={raingingImage} />
         </div>
     );
 }

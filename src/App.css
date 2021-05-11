@@ -5,39 +5,50 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -5;
+  overflow: hidden;
 }
 
 .WeatherApp-icon {
   height: 5em;
-  pointer-events: none;
-  filter: invert(0.5);
-  float: left;
+  filter: invert(1);
+  float: right;
 }
 
 .Location {
   margin-top: 2em;
 }
 
-
-/*.Weather-page-open {
-  background-color: black;
-  filter: opacity(62.5%);
-  height: 100vh;
-  width: calc(100vw - 20vw);
-  position: absolute;
-  left: 20vw;
-  transition: all 1.5s ease;
-  overflow: hidden;
-}*/
+.Weather-overview {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 7em;
+}
 
 .Weather-header {
-  width: 10em;
+  width: 100%;
+  height: 100%;
+}
+
+.WeatherApp-pic {
+  width: 50%;
 }
 
 .Temperature {
-  width: fit-content;
-  float: right;
+  width: 50%;
 }
+
+.Temperature h1{
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1em;
+}
+
+.Weather-top {
+  display: flex;
+}
+
 
 .App-header {
   background-color: black;
@@ -83,7 +94,7 @@
   overflow: hidden;
   position: absolute;
   background-color: #fff;
-  height: 100vh;
+  height: 100%;
   box-shadow: 5px 0px 5px grey;
   z-index: 1;
 }
@@ -134,7 +145,6 @@
 .sun {
   height: 3em;
   width: 3em;
-  padding: 10px 15px 10px 15px;
   filter: invert(1);
 }
 
@@ -151,7 +161,6 @@
 .moon {
   height: 3em;
   width: 3em;
-  padding: 10px 15px 10px 15px;
 }
 
 .buttons {
@@ -197,4 +206,12 @@
 
 .ToolBarNight {
   filter: invert(1);
+}
+
+.Mode {
+  height: 8em;
+}
+
+.Mode-change {
+ margin-top: 1em;
 }
