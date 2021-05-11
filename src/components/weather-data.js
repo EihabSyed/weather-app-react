@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import WeatherHead from '../api-calls/weatherAPI.js';
 import cloudyImage from '../images/background-images/Cloudy.png';
 import raingingImage from '../images/background-images/Raining.png';
-import snowingImage from '../images/background-images/Snowing.png';
+import snowingImage from '../images/background-images/Snowing.jpg';
+import partlyCloudyImage from '../images/background-images/Partly-Cloudy.png';
+import sunnyImage from '../images/background-images/Sunny.svg';
+import nightImage from '../images/background-images/Night.png';
+import nightCloudyImage from '../images/background-images/Night-Cloudy.png';
+import nightRainingImage from '../images/background-images/Night-Raining.png';
+import snowingNightImage from '../images/background-images/Snowing-Night.png';
+
+
+
 
 var place = require('../newResponse.json');
 //var request = require('request');
@@ -29,9 +38,15 @@ const placeFinder = () => {
 }
 
 
-const pictures = [{ name: "Cloudy", image: cloudyImage, id: 1 },
-{ name: "Raining", image: raingingImage, id: 2 },
-{ name: "Snowing", image: snowingImage, id: 3 }];
+const pictures = { "Cloudy" : { image: cloudyImage, id: 1 },
+"Raining" : { image: raingingImage, id: 2 },
+"Snowing" : { image: snowingImage, id: 3 }, 
+"PartlyCloudy" : { image: partlyCloudyImage, id: 4 },
+"Sunny" : { image: sunnyImage, id: 5 },
+"Night" : { image: nightImage, id: 6 },
+"NightCloudy" : { image: nightCloudyImage, id: 7 },
+"NightRaining" : { image: nightRainingImage, id: 8 },
+"NightSnowing" : { image: snowingNightImage, id: 9 }};
 
 
 const WeatherPage = () => {
@@ -48,7 +63,7 @@ const WeatherPage = () => {
             <div className="Location">
                 {placeFinder()}
             </div>
-            <WeatherHead pic={raingingImage} />
+            <WeatherHead pics={pictures} />
         </div>
     );
 }
