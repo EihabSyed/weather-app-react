@@ -9,8 +9,6 @@ function App() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [picBackground, setPicBackground] = useState(1);
-  //const [mode, setMode] = useState(false);
-  //var localIsTrueSet = (localStorage.getItem("Mode") === 'true');
   const [cookies, setCookie] = useCookies(['Mode']);
   var cookiesIsTrueSet = (cookies.Mode === 'true');
 
@@ -25,17 +23,12 @@ function App() {
   const changeMode = () => {
     setCookie('Mode', !cookiesIsTrueSet, { path: '/' });
     cookiesIsTrueSet = (cookies.Mode === 'true');
-    //setMode(!mode);
-    //localStorage.setItem("Mode", !localIsTrueSet);
-    //localIsTrueSet = (localStorage.getItem("Mode") === 'true');
   }
 
   const props = {
     handleClose: togglePopup,
     handleMode: changeMode,
-    //modeType: mode,
     cookieMode: cookiesIsTrueSet,
-    //storageMode: localIsTrueSet
   }
 
   const backgroundSetter = () => {

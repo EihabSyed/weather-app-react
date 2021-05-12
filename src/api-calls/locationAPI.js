@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-const request = require('request');
-
 
 const LocationHeader = (props) => {
 

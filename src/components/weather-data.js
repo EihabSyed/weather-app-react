@@ -4,7 +4,6 @@ import cloudyImage from '../images/background-images/Cloudy.png';
 import raingingImage from '../images/background-images/Raining.png';
 import snowingImage from '../images/background-images/Snowing.jpg';
 import partlyCloudyImage from '../images/background-images/Partly-Cloudy.png';
-import sunnyImage from '../images/background-images/Sunny.svg';
 import nightImage from '../images/background-images/Night.png';
 import nightCloudyImage from '../images/background-images/Night-Cloudy.png';
 import nightRainingImage from '../images/background-images/Night-Raining.png';
@@ -22,7 +21,6 @@ const pictures = {
     "NightRaining": { image: nightRainingImage, id: 7 },
     "NightSnowing": { image: snowingNightImage, id: 8 }
 };
-
 
 const WeatherPage = (props) => {
 
@@ -44,15 +42,6 @@ const WeatherPage = (props) => {
         setUserLongitude(long);
     }
 
-
-    /*fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`, {
-        headers: {
-            'Authorization': '59a43f12-ac67-11eb-80d0-0242ac130002-59a43fbc-ac67-11eb-80d0-0242ac130002'
-        }
-    }).then((response) => response.json()).then((jsonData) => {
-        // Do something with response data.
-        return (<p>{Math.ceil(jsonData.hours.find(tempFinder).airTemperature.sg)}</p>);
-    });*/
     return (
         <div className="Weather-header">
             <div className="Location">
