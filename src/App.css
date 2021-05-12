@@ -1,6 +1,76 @@
-.App {
+.Day-Cloudy {
   text-align: center;
   background-image: url(./images/background-images/cloudy-day.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Night-Cloudy {
+  text-align: center;
+  background-image: url(./images/background-images/cloudy-night.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Day-Raining {
+  text-align: center;
+  background-image: url(./images/background-images/raining-day.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Night-Raining {
+  text-align: center;
+  background-image: url(./images/background-images/raining-night.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Day-Snowing {
+  text-align: center;
+  background-image: url(./images/background-images/snowing-day.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Night-Snowing {
+  text-align: center;
+  background-image: url(./images/background-images/snowing-night.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Sunny {
+  text-align: center;
+  background-image: url(./images/background-images/sunny.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.Night {
+  text-align: center;
+  background-image: url(./images/background-images/night.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

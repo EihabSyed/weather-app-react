@@ -7,26 +7,8 @@ import { useCookies } from 'react-cookie';
 
 function App() {
 
-  const showPosition = () => {
-    navigator.geolocation.getCurrentPosition(async function (position) {
-      //console.log(position.coords.latitude);
-      //console.log(position.coords.longitude);
-      const userLongitude = position.coords.longitude;
-      const userLatitude = position.coords.latitude;
-      getLocation(userLatitude, userLongitude);
-    })
-  }
-
-  React.useEffect(showPosition, []);
-
-
-  const getLocation = (lat, long) => {
-    console.log(lat);
-    console.log(long);
-  }
-
-
   const [isOpen, setIsOpen] = useState(false);
+  const [picBackground, setPicBackground] = useState(1);
   //const [mode, setMode] = useState(false);
   //var localIsTrueSet = (localStorage.getItem("Mode") === 'true');
   const [cookies, setCookie] = useCookies(['Mode']);
@@ -54,15 +36,33 @@ function App() {
     //modeType: mode,
     cookieMode: cookiesIsTrueSet,
     //storageMode: localIsTrueSet
-    //allOpac: toggleOpac
+  }
+
+  const backgroundSetter = () => {
+    if (picBackground === 1) {
+      return "Day-Cloudy";
+    } else if (picBackground === 2) {
+      return "Day-Raining";
+    } else if (picBackground === 3) {
+      return "Day-Snowing";
+    } else if (picBackground === 4) {
+      return "Sunny";
+    } else if (picBackground === 5) {
+      return "Night";
+    } else if (picBackground === 6) {
+      return "Night-Cloudy";
+    } else if (picBackground === 7) {
+      return "Night-Raining";
+    } else if (picBackground === 8) {
+      return "Night-Snowing";
+    } 
   }
 
   return (
-    <div className="App">
+    <div className={backgroundSetter()}>
       <ToolBar {...props} />
       <header className="App-header">
-        {/*<div className={opacAll ? "Weather-page-open" : "Weather-page-close"}></div>*/}
-        <WeatherPage />
+        <WeatherPage background={setPicBackground}/>
       </header>
       {isOpen && <About {...props} />}
     </div>

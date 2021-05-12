@@ -9,47 +9,42 @@ import nightImage from '../images/background-images/Night.png';
 import nightCloudyImage from '../images/background-images/Night-Cloudy.png';
 import nightRainingImage from '../images/background-images/Night-Raining.png';
 import snowingNightImage from '../images/background-images/Snowing-Night.png';
+import LocationHeader from '../api-calls/locationAPI.js';
 
 
-
-
-var place = require('../newResponse.json');
-//var request = require('request');
-//const lat = 43.961775;
-//const lng = -78.894863;
-const lat = 49.611622;
-const lng = 6.131935;
-const params = 'airTemperature';
-const source = 'sg';
-/*var urlPlace = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=pk.eyJ1IjoiZWloYWJzeWVkIiwiYSI6ImNrb2htdjZyMjB5MGwydW9kcGhrdng3cmYifQ.mbYuzglXqH7jgVN54UpVOg`;
-
-var options = {
-    'method': 'GET',
-    'url': urlPlace
+const pictures = {
+    "Cloudy": { image: cloudyImage, id: 1 },
+    "Raining": { image: raingingImage, id: 2 },
+    "Snowing": { image: snowingImage, id: 3 },
+    "PartlyCloudy": { image: partlyCloudyImage, id: 4 },
+    "Night": { image: nightImage, id: 5 },
+    "NightCloudy": { image: nightCloudyImage, id: 6 },
+    "NightRaining": { image: nightRainingImage, id: 7 },
+    "NightSnowing": { image: snowingNightImage, id: 8 }
 };
-request(options, function (error, response) {
-    if (error) throw new Error(error);
-    place = JSON.parse(response.body).features[3].place_name;
-    console.log(JSON.parse(response.body).features[3].place_name);
-});*/
-
-const placeFinder = () => {
-    return (place.features[3].place_name);
-}
 
 
-const pictures = { "Cloudy" : { image: cloudyImage, id: 1 },
-"Raining" : { image: raingingImage, id: 2 },
-"Snowing" : { image: snowingImage, id: 3 }, 
-"PartlyCloudy" : { image: partlyCloudyImage, id: 4 },
-"Sunny" : { image: sunnyImage, id: 5 },
-"Night" : { image: nightImage, id: 6 },
-"NightCloudy" : { image: nightCloudyImage, id: 7 },
-"NightRaining" : { image: nightRainingImage, id: 8 },
-"NightSnowing" : { image: snowingNightImage, id: 9 }};
+const WeatherPage = (props) => {
+
+    const [userLatitude, setUserLatitude] = useState(0);
+    const [userLongitude, setUserLongitude] = useState(0);
+    const showPosition = () => {
+        navigator.geolocation.getCurrentPosition(async function (position) {
+            const userLongitude = position.coords.longitude;
+            const userLatitude = position.coords.latitude;
+            getLocation(userLatitude, userLongitude);
+        })
+    }
+
+    React.useEffect(showPosition, []);
 
 
-const WeatherPage = () => {
+    const getLocation = (lat, long) => {
+        setUserLatitude(lat);
+        setUserLongitude(long);
+    }
+
+
     /*fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`, {
         headers: {
             'Authorization': '59a43f12-ac67-11eb-80d0-0242ac130002-59a43fbc-ac67-11eb-80d0-0242ac130002'
@@ -61,9 +56,9 @@ const WeatherPage = () => {
     return (
         <div className="Weather-header">
             <div className="Location">
-                {placeFinder()}
+                <LocationHeader Lat={userLatitude} Long={userLongitude}/>
             </div>
-            <WeatherHead pics={pictures} />
+            <WeatherHead pics={pictures} Lat={userLatitude} Long={userLongitude} background={props.background}/>
         </div>
     );
 }
